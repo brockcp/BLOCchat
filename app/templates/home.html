@@ -1,9 +1,5 @@
-<section ng-controller='HomeCtrl as home'>
-  <div class='navbar'>
-    <h1>Bloc Chat</h1>
-
-    <h4 ng-repeat='room in home.rooms track by $index'>
-      Room{{ ($index + 1)}}
-    </h4>
+<h1>Bloc Chat</h1>
+  <div ng-controller='ModalCtrl as modal'>
+    <button class='btn' ng-click="modal.open()">New Room</button>
   </div>
-</section>
+  <h4 ng-repeat="room in home.rooms">{{ room.$value }}</h4>

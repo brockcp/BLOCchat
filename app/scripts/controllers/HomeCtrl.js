@@ -3,7 +3,7 @@
     this.rooms = Room.all;
   }
 
-  angular
-    .module('blocChat')
-    .controller('HomeCtrl',['Room', HomeCtrl]);
+angular
+  .module('blocChat')
+  .controller('HomeCtrl',['Room', HomeCtrl]);
 })();
