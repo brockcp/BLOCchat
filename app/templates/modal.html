@@ -2,7 +2,7 @@
     <h2 class="modal-title">Create new room</h2>
   </div>
   <div class="modal-body">
-    Enter a room name:<br/>
+    Room name:<br/>
     <form ng-submit="modal.ok()">
       <div class="input-group animated fadeIn">
         <input type="text" class="form-control finderBar"
@@ -13,6 +13,6 @@
     </form>
   </div>
     <div class="modal-footer">
-      <button ng-click="modal.ok()">Create room</button>
-      <button ng-click="modal.cancel()">Cancel</button>
+      <button class='btn btn-success' ng-click="modal.ok()">create room</button>
+      <button class= 'btn btn-info' ng-click="modal.cancel()">cancel</button>
     </div>
