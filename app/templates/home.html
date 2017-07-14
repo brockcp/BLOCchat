@@ -1,15 +1,23 @@
-<div class='container-fluid'>
-  <div class='row'>
-    <div class='col-xs-12 col-sm-3 blue-back'>
-      <h1>Bloc Chat</h1>
-      <div ng-controller='ModalCtrl as modal'>
-        <button class='btn btn-primary' ng-click="modal.open()">New Room</button>
-      </div><!--end ng-controller-->
-      <h4 ng-repeat="room in home.rooms">{{ room.$value }}</h4>
-    </div><!--end left col-->
 
-    <div class='col-xs-12 col-sm-9'>
-      <h4>placeholder for posts</h4>
-    </div><!--end main col-->
-  </div><!--end row-->
-</div><!--end container-fluid-->
+<h1>Bloc Chat</h1>
+  <div ng-controller='ModalCtrl as modal'>
+    <button type="button" class="btn btn-default" ng-click="modal.open()">New room</button>
+  </div>
+
+  <h4 class="room" ng-repeat="room in home.rooms">
+  <p ng-click="home.changeRoom(room)">{{ room.$value }}</p>
+  </h4>
+
+<div class="container">
+  <h2>{{ currentRoom.$value }}</h2>
+    <table class="table">
+      <tr ng-repeat="message in messages track by $index" class="row" ng-class="{oddRow: $odd}">
+        <td class="username">
+          {{ message.username }}:
+          <br/>
+          {{ message.content }}
+          </td>
+          <td class="sentAt">{{ message.sentAt }}</td>
+      </tr>
+    </table>
+</div>

@@ -1,7 +1,0 @@
-/* code below is rough written for dev. use only - brock */
-h1{color:#c66}
-.blue-back{background-color:lightblue}
-.modal-title{color:#c66}
-@media (min-width: 768px) {
-.blue-back{height:100vh}
- }
