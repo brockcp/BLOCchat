@@ -1,0 +1,19 @@
+
+  <h2 class="modal-title">Enter Your Username</h2>
+  <div class="modal-body">
+    <p>necessary to post</p>
+    <form ng-submit="modal.ok()">
+      <div class="input-group">
+        <input type="text" class="form-control"
+        ng-model="username.username" title="username" autofocus>
+      </div>
+    </form>
+
+  <div>
+    <button class="btn btn-block btn-primary btn-username"
+            type="button" ng-click="username.setUsername()"
+            ng-disabled="username.username === undefined ||
+            username.username === ''">Set username
+    </button>
+  </div>
+</div>

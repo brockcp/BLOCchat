@@ -1,23 +1,43 @@
+<div class='container-fluid'>
+  <section id='sidebar' class='col-xs-12 col-md-4'>
+    <h1>Bloc Chat</h1>
+    <h4>Something you just have to say?</h4>
+    <div ng-controller="ModalCtrl as modal">
+      <button class="btn btn-primary btn-greensand" ng-click="modal.open()">New Room</button>
+    </div>
+    <hr/>
+    <h4>Or just want to see what others are?</h4>
+    <hr>
+    <div class='room-name' ng-repeat="room in home.rooms" ng-class="{oddRow: $odd}">
+      <h4 ng-click="home.changeRoom(room)">{{ room.$value }}</h4>
+    </div>
+    <div ng-show="home.activeRoom === null">
+    </div>
+    <hr>
+  </section>
 
-<h1>Bloc Chat</h1>
-  <div ng-controller='ModalCtrl as modal'>
-    <button type="button" class="btn btn-default" ng-click="modal.open()">New room</button>
-  </div>
+  <section id='main' class='col-xs-12 col-md-8'>
+    <h2 ng-show="home.activeRoom !== null">{{ home.activeRoom.$value }}</h2>
 
-  <h4 class="room" ng-repeat="room in home.rooms">
-  <p ng-click="home.changeRoom(room)">{{ room.$value }}</p>
-  </h4>
+    <div ng-show="home.activeRoom !== null">
+      <div class='messages' ng-repeat="message in home.messages"
+      ng-class="{oddRow1: $odd}">
+        <p>posted: <span class="">{{ message.username }}</span>
+               <span class="message-date-float-right"> {{ message.sentAt }}</span>
+        </p>
+        <p class="">{{ message.content }}</p>
+      </div>
+    </div>
 
-<div class="container">
-  <h2>{{ currentRoom.$value }}</h2>
-    <table class="table">
-      <tr ng-repeat="message in messages track by $index" class="row" ng-class="{oddRow: $odd}">
-        <td class="username">
-          {{ message.username }}:
-          <br/>
-          {{ message.content }}
-          </td>
-          <td class="sentAt">{{ message.sentAt }}</td>
-      </tr>
-    </table>
+    <div ng-show="home.activeRoom !== null">
+      <form ng-submit="home.sendMessage(home.newMessage, home.activeRoom)">
+        <div>
+          <input type="text" class="message-input" ng-model="home.newMessage" title="message" autofocus>
+          <span class="btn"><button class="btn btn-primary btn-blue"
+          type="button" ng-click="home.sendMessage()">Send</button></span>
+        </div>
+      </form>
+    </div>
+  </section>
+
 </div>

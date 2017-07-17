@@ -7,13 +7,17 @@
     <br/>
       <form ng-submit="modal.ok()">
         <div class="input-group">
-          <input type="text" class="form-control finderBar" ng-model="modal.name" title="name" placeholder="Your room name here" autofocus>
+          <input type="text" class="form-control finderBar"
+          ng-model="modal.name" title="name"
+          placeholder="Your room name here" autofocus>
           <h4>{{ modal.name }}</h4>
         </div>
       </form>
   </div>
     <div class="modal-footer">
-      <button class="btn btn-primary" type="button" ng-click="modal.ok()">Create room</button>
-      <button class="btn btn-warning" type="button" ng-click="modal.cancel()">Cancel</button>
+      <button class="btn btn-primary" type="button"
+      ng-click="modal.ok()">Create room</button>
+      <button class="btn btn-warning" type="button"
+      ng-click="modal.cancel()">Cancel</button>
     </div>
 </div>

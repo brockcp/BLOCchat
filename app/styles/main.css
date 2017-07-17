@@ -1,0 +1,87 @@
+body{
+  color:#666666;
+}
+.container-fluid{
+  padding-right: 0;
+  padding-left: 0;
+}
+.col-xs-12, .col-md-4, .col-md-8 {
+  margin: 0;
+  padding:0
+}
+.oddRow{
+  border:1px solid #ccddbb
+}
+hr {
+  border-top:1px solid #ccddbb;
+}
+
+/*SIDEBAR*/
+#sidebar{
+  background-color:#cceeff;
+  padding:3%
+}
+.btn-greensand{
+  color:#666666;
+  background-color:#ccddbb;
+  border: 1px solid #666666;
+}
+.btn-greensand:hover{
+  color:#555555;
+  background-color:#ccccbb;
+}
+.room-name{
+  padding:0 2%;
+}
+.room-name:hover{
+  cursor: pointer;
+}
+
+/*MESSAGES*/
+#main{
+  background-color: #ccddbb;
+  padding: 0 3%;
+}
+.messages {
+  border-bottom:1px solid #ccddbb;
+  background-color:#ffffff;
+  padding: 3%
+}
+.message-date-float-right{
+  float:right
+}
+.message-input{
+  margin-left: 3%;
+}
+.btn-blue{
+  color:#666666;
+  background-color:#cceeff;
+}
+.btn-blue:hover{
+  color:#555555;
+  background-color:#cceeee;
+}
+
+/*USERNAME TEMPLATE*/
+.modal-dialog{
+  max-width:350px;
+  margin: 0 auto;
+}
+.modal-title{
+  margin-left:5%;
+}
+.btn-username{
+  margin-top:3%;
+}
+
+/*MEDIA Qs*/
+@media (min-width: 768px){
+  .modal-dialog{
+    max-width:400px
+  }
+}
+@media (min-width: 992px){
+  #sidebar, #main{
+    height:100vh; /*FIX*/
+  }
+}

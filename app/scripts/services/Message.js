@@ -1,15 +1,26 @@
 (function() {
-    function Message($firebaseArray) {
-        var ref = firebase.database().ref().child("messages");
-        var messages = $firebaseArray(ref);
-        return {
-           getByRoomId: function(roomId) {
-               return $firebaseArray(ref.orderByChild("roomId").equalTo(roomId));
-           }
-        };
-    }
+  function Message($firebaseArray, $cookies, $filter) {
+    var Message = {};
+    var ref = firebase.database().ref().child('messages');
+    var messages = $firebaseArray(ref);
 
-    angular
-        .module('blocChat')
-        .factory('Message', ['$firebaseArray', Message]);
+    Message.getByRoomId = function(roomId) {
+      return $firebaseArray(ref.orderByChild('roomId').equalTo(roomId));
+    };
+
+    Message.send = function(newMessage, activeRoom) {
+      var date = new Date();
+      messages.$add({
+        content: newMessage,
+        roomId: activeRoom.$id,
+        sentAt: $filter('date')(date, 'h:mma EEEE M/yy'),
+        username: $cookies.get('blocChatCurrentUser')
+      });
+    };
+    return Message;
+  }
+
+  angular
+    .module('blocChat')
+    .factory('Message', ['$firebaseArray', '$cookies', '$filter', Message]);
 })();

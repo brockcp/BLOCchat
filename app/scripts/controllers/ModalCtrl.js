@@ -1,25 +1,20 @@
 (function() {
-  function ModalCtrl($uibModal, $log, Room) {
+  function ModalCtrl($uibModal, Room) {
+
     this.open = function() {
       var modalInstance = $uibModal.open({
-        animation: this.animationsEnabled,
-        templateUrl : '/templates/modal.html',
-        controller: 'ModalInstanceCtrl',
-        controllerAs: 'modal'
+        templateUrl: '/templates/modal.html',
+        controller: 'ModalInstanceCtrl as modal',
+        size: 'sm'
       });
       modalInstance.result.then(function(name) {
         this.room = name;
-        Room.create(this.room);
-      }, function() {
-          $log.info('Modal dismissed at ' + new Date());
-         });
-    };
-    this.toggleAnimation = function () {
-      this.animationsEnabled = !this.animationsEnabled;
+        Room.add(this.room);
+      });
     };
   }
 
   angular
     .module('blocChat')
-    .controller('ModalCtrl', ['$uibModal', '$log', 'Room', ModalCtrl]);
+    .controller('ModalCtrl', ['$uibModal', 'Room', ModalCtrl]);
 })();

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html ng-app='blocChat'>
+<html ng-app="blocChat">
 <head lang="en">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Brocks-Bloc-Chat</title>
+  <title>Bloc-Chat</title>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
   <link rel="stylesheet" href="/styles/main.css">
 </head>
@@ -16,18 +16,19 @@
   <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
   <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script>
 
   <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyB4fZ7TNuA_vygw0fTNa_ohcKjklVtfyI8",
-      authDomain: "bloc-chat-3d680.firebaseapp.com",
-      databaseURL: "https://bloc-chat-3d680.firebaseio.com",
-      projectId: "bloc-chat-3d680",
-      storageBucket: "bloc-chat-3d680.appspot.com",
-      messagingSenderId: "902762353228"
-    };
-    firebase.initializeApp(config);
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB4fZ7TNuA_vygw0fTNa_ohcKjklVtfyI8",
+    authDomain: "bloc-chat-3d680.firebaseapp.com",
+    databaseURL: "https://bloc-chat-3d680.firebaseio.com",
+    projectId: "bloc-chat-3d680",
+    storageBucket: "bloc-chat-3d680.appspot.com",
+    messagingSenderId: "902762353228"
+  };
+  firebase.initializeApp(config);
   </script>
   <script src="/scripts/app.js"></script>
   <script src="/scripts/services/Room.js"></script>
@@ -35,5 +36,7 @@
   <script src="/scripts/controllers/HomeCtrl.js"></script>
   <script src="/scripts/controllers/ModalCtrl.js"></script>
   <script src="/scripts/controllers/ModalInstanceCtrl.js"></script>
+  <script src="/scripts/controllers/UsernameCtrl.js"></script>
+  <script src="/scripts/services/BlocChatCookies.js"></script>
 </body>
 </html>
