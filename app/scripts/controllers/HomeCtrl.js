@@ -1,4 +1,4 @@
-(function() {
+(function() {  //room service
   function HomeCtrl(Room, Message, $cookies) {
     this.rooms = Room.all;
     this.activeRoom = null;
