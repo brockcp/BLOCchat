@@ -13,6 +13,7 @@
 - **Firebase** for database services
 - **AngularFire API**
 - **Angular-ui-Bootstrap** for styling with angularjs
+- **Bootstrap JS Modal** for username entry
 
 ### Background
 
